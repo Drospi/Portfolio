@@ -1,0 +1,27 @@
+---
+const { color } = Astro.props
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Document</title>
+    </head>
+    <body>
+        <ul class="inline-flex list-none cursor-pointer">
+            <li class=`icon group relative ${color} rounded-full p-4 m-4 w-12 h-12 flex justify-center items-center flex-col shadow-sm curosr-pointer transition-all`>
+                <span class="tooltip"><slot/></span>
+                <span class=`tooltip absolute top-0 text-md ${color} text-white px-8 py-1 rounded shadow-sm opacity-0 transition-all pointer-events-none 
+                before:absolute before:content-[''] before:h-2 before:w-2 before:${color} before:-bottom-1 before:left-1/2 before:-translate-x-1/2 before:rotate-45 before:transition-all
+                group-hover:-top-16 group-hover:opacity-100 group-hover:pointer-events-auto group:hover:visible`><slot name="tooltip">Por defecto</slot> </span>
+            </li>
+        </ul>
+    </body>
+    <style>
+        .wrapeer li {
+            
+        }
+    </style>
+</html>
